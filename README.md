@@ -12,6 +12,7 @@ End-to-end web automation framework using **Playwright**, **Python**, and **Pyte
 
 ## Project Structure
 
+```text
 Playwright-Python/
 ├── tests/
 │   └── test_search.py
