@@ -1,15 +1,36 @@
 import pytest
 from playwright.sync_api import sync_playwright
 
-@pytest.fixture(scope="session")
-def browser():
-   with sync_playwright() as p:
-       browser = p.chromium.launch(headless=False, slow_mo=5000)
-       yield browser
-       browser.close()
+@pytest.fixture
+def chrome_page():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            channel="chrome",
+            headless=False,
+            slow_mo=2000
+        )
+
+        page = browser.new_page()
+        page.set_default_timeout(7000)
+
+        yield page
+
+        page.close()
+        browser.close()
 
 @pytest.fixture
-def page(browser):
-   page = browser.new_page()
-   yield page
-   page.close()
+def edge_page():
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            channel="msedge",
+            headless=False,
+            slow_mo=2000
+        )
+
+        page = browser.new_page()
+        page.set_default_timeout(7000)
+
+        yield page
+
+        page.close()
+        browser.close()
