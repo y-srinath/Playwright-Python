@@ -1,25 +1,21 @@
 # Playwright-Python
 
-End-to-end web automation framework using **Playwright**, **Python**, and **Pytest**.
-
-## Tech Stack
-
-- Python
-- Playwright
-- Pytest
-- Pytest HTML Reports
-- Page Object Model structure
+Playwright automation framework using Python, Pytest, browser fixtures, markers, HTML reporting, and parallel execution.
 
 ## Project Structure
 
 ```text
 Playwright-Python/
-├── tests/
-│   └── test_search.py
-├── pages/
-├── utils/
 ├── assets/
+├── pages/
+├── reports/
+├── tests/
+│   ├── test_rec.py
+│   ├── test_search.py
+│   └── test_pytest_outcomes.py
+├── utils/
+├── .gitignore
 ├── conftest.py
 ├── pytest.ini
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
